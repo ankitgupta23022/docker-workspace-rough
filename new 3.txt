@@ -1,0 +1,15 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\ankit> docker ps
+CONTAINER ID   IMAGE                    COMMAND                  CREATED          STATUS          PORTS                    NAMES
+9726088ebfdd   d45040fec2f8             "java -jar /app.jar"     16 minutes ago   Up 16 minutes   0.0.0.0:9091->9091/tcp   zen_montalcini
+0257f4bce1d1   docker/getting-started   "/docker-entrypoint.…"   39 minutes ago   Up 39 minutes   0.0.0.0:80->80/tcp       interesting_zhukovsky
+PS C:\Users\ankit> docker exec -it 9726088ebfdd bash
+root@9726088ebfdd:/# ls
+app.jar  bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+root@9726088ebfdd:/# exit
+exit
+PS C:\Users\ankit>

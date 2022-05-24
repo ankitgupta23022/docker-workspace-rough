@@ -1,0 +1,128 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\ankit> docker ps
+CONTAINER ID   IMAGE                    COMMAND                  CREATED          STATUS          PORTS                    NAMES
+9726088ebfdd   d45040fec2f8             "java -jar /app.jar"     12 minutes ago   Up 12 minutes   0.0.0.0:9091->9091/tcp   zen_montalcini
+0257f4bce1d1   docker/getting-started   "/docker-entrypoint.…"   35 minutes ago   Up 35 minutes   0.0.0.0:80->80/tcp       interesting_zhukovsky
+PS C:\Users\ankit> docker ps -a
+CONTAINER ID   IMAGE                    COMMAND                  CREATED          STATUS                      PORTS                    NAMES9726088ebfdd   d45040fec2f8             "java -jar /app.jar"     12 minutes ago   Up 12 minutes               0.0.0.0:9091->9091/tcp   zen_montalcini
+c4f06f32b4bc   hello-world              "/hello"                 34 minutes ago   Exited (0) 34 minutes ago                            vigorous_curran
+b5ef2796345b   docker/getting-started   "/docker-entrypoint.…"   36 minutes ago   Created                                              friendly_aryabhata
+0a5088ba5d96   docker/getting-started   "/docker-entrypoint.…"   36 minutes ago   Created                                              crazy_carver
+0257f4bce1d1   docker/getting-started   "/docker-entrypoint.…"   36 minutes ago   Up 36 minutes               0.0.0.0:80->80/tcp       interesting_zhukovsky
+PS C:\Users\ankit> docker inspect d45040fec2f8
+[
+    {
+        "Id": "sha256:d45040fec2f86e703fe2e4985dcb32a93ad72632a96f1b8bfcae995484cfb532",
+        "RepoTags": [
+            "dailycodebuffer/dockerpublish:0.0.3"
+        ],
+        "RepoDigests": [
+            "dailycodebuffer/dockerpublish@sha256:ec67b1325defd51d1b9723f93fee09432741c3fa898a953ad9e94e2b2c86ff36"
+        ],
+        "Parent": "",
+        "Comment": "",
+        "Created": "2020-07-12T06:51:10.48367072Z",
+        "Container": "73791d4c163e84752f78ce6ba2d06b1e0d7d21ae704fecf1a2013e57d54d9d20",
+        "ContainerConfig": {
+            "Hostname": "73791d4c163e",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "JAVA_HOME=/usr/local/openjdk-11",
+                "JAVA_VERSION=11.0.7",
+                "JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.7%2B10/OpenJDK11U-jdk_",
+                "JAVA_URL_VERSION=11.0.7_10"
+            ],
+            "Cmd": [
+                "/bin/sh",
+                "-c",
+                "#(nop) ",
+                "ENTRYPOINT [\"java\" \"-jar\" \"/app.jar\"]"
+            ],
+            "Image": "sha256:f3aac582f39195c390aa6fc4b9eb00c1c4594f1e0655c8990127d9786aa3c5c5",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": [
+                "java",
+                "-jar",
+                "/app.jar"
+            ],
+            "OnBuild": null,
+            "Labels": {}
+        },
+        "DockerVersion": "19.03.8",
+        "Author": "",
+        "Config": {
+            "Hostname": "",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "JAVA_HOME=/usr/local/openjdk-11",
+                "JAVA_VERSION=11.0.7",
+                "JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.7%2B10/OpenJDK11U-jdk_",
+                "JAVA_URL_VERSION=11.0.7_10"
+            ],
+            "Cmd": null,
+            "Image": "sha256:f3aac582f39195c390aa6fc4b9eb00c1c4594f1e0655c8990127d9786aa3c5c5",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": [
+                "java",
+                "-jar",
+                "/app.jar"
+            ],
+            "OnBuild": null,
+            "Labels": null
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 643883488,
+        "VirtualSize": 643883488,
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/0ed0f062b1cdfebb362b2a210ec0e6b9a8d98bf85d16f016354dc7e70a79f8bb/diff:/var/lib/docker/overlay2/253d338b1c6b05745ef133fb28d7016e82a1432a04d7ac29c19dd5da820d907a/diff:/var/lib/docker/overlay2/e7add5aad8d3ae2b134664ab0436644814d0c754ae1b65c735743c3b49fae54c/diff:/var/lib/docker/overlay2/e96a78d01a5fd8bd1de28bce01cac03522124a31d42fbdc5a6188b8fe7112838/diff:/var/lib/docker/overlay2/a0890b021b8d7142b6f70655eefc253ccc06bb3d9ddcbf3016777b18470736e2/diff:/var/lib/docker/overlay2/ed4755d9ce15f8929fae35c717ea5d0dea31d51bc5eb4a8f1be654f69120bd09/diff:/var/lib/docker/overlay2/e41bf3c514ab33526649f22c88f175f0ace045ad6eb0dcd1d268bb2b98d2fee7/diff",
+                "MergedDir": "/var/lib/docker/overlay2/894012e5be8467cbac7cf24f76ed7096088d230168dcdfca16e8208f281293cb/merged",
+                "UpperDir": "/var/lib/docker/overlay2/894012e5be8467cbac7cf24f76ed7096088d230168dcdfca16e8208f281293cb/diff",
+                "WorkDir": "/var/lib/docker/overlay2/894012e5be8467cbac7cf24f76ed7096088d230168dcdfca16e8208f281293cb/work"
+            },
+            "Name": "overlay2"
+        },
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:8803ef42039dcbe936755e9baae4bb7b19cb0fb6a438eb3992950cd0afef8e4f",
+                "sha256:c2c789d2d3c5fc15428921b5316a63907d8c312c5508cbac9a704bd30bcc740d",
+                "sha256:527ade4639e08d1b2ba9d0d46f3b43433310a2e8674ae808aeef5502b099ff3c",
+                "sha256:2e5b4ca91984c19a75bad687aedebf02609511a033aa0d3d15ac915593279718",
+                "sha256:f5181c7ef9028578eb0040a0051ce940c3f9ba62a51d3eb02ad52c3724db3e9b",
+                "sha256:f73b2345c404b2a65abc66ab68af6b112aafb9d2583416d2eb84a47139e4626e",
+                "sha256:4f866e977815a2e939dda0158a1d967cb2363127c48d46ab89a8d700058bf4c6",
+                "sha256:b1c44eb4b8d9eff4353791239e4743e56e0d14840e73152ca92550a9819dd411"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "0001-01-01T00:00:00Z"
+        }
+    }
+]
+PS C:\Users\ankit>

@@ -1,0 +1,53 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\ankit> docker ps
+CONTAINER ID   IMAGE                    COMMAND                  CREATED          STATUS          PORTS                    NAMES
+5b1adf81e8b5   alpine                   "/bin/sh"                5 minutes ago    Up 5 minutes                             suspicious_haslett
+3ec5d9387724   0ac33e5f5afa             "/bin/sh"                15 minutes ago   Up 15 minutes                            cranky_williamson
+9726088ebfdd   d45040fec2f8             "java -jar /app.jar"     35 minutes ago   Up 35 minutes   0.0.0.0:9091->9091/tcp   zen_montalcini
+0257f4bce1d1   docker/getting-started   "/docker-entrypoint.…"   59 minutes ago   Up 59 minutes   0.0.0.0:80->80/tcp       interesting_zhukovsky
+PS C:\Users\ankit> docker export -o alpinetree.tar
+"docker export" requires exactly 1 argument.
+See 'docker export --help'.
+
+Usage:  docker export [OPTIONS] CONTAINER
+
+Export a container's filesystem as a tar archive
+PS C:\Users\ankit> docker export -o alpinetree.tar 5b1adf81e8b5
+PS C:\Users\ankit> docker import aplinetree.tar dailycodebuffer/alipineimport:0.0.3
+open aplinetree.tar: The system cannot find the file specified.
+PS C:\Users\ankit> docker import alpinetree.tar 5b1adf81e8b5
+sha256:72c732c68ad1324124ee6dc75ba63233cfa5b2f65536db383b5d543998aff8cc
+PS C:\Users\ankit> docker images
+REPOSITORY                      TAG       IMAGE ID       CREATED             SIZE
+5b1adf81e8b5                    latest    72c732c68ad1   16 seconds ago      5.57MB
+dailycodebuffer/alpinetree      latest    c0f584371709   About an hour ago   5.57MB
+docker/getting-started          latest    cb90f98fd791   5 weeks ago         28.8MB
+alpine                          latest    0ac33e5f5afa   6 weeks ago         5.57MB
+hello-world                     latest    feb5d9fea6a5   7 months ago        13.3kB
+dailycodebuffer/dockerpublish   0.0.3     d45040fec2f8   22 months ago       644MB
+PS C:\Users\ankit> docker rmi 5b1adf81e8b5
+Untagged: 5b1adf81e8b5:latest
+Deleted: sha256:72c732c68ad1324124ee6dc75ba63233cfa5b2f65536db383b5d543998aff8cc
+Deleted: sha256:449beffa027e921775c267b5fa8b05f8809d233041e095a7ca59f5459c295f2f
+PS C:\Users\ankit> docker images
+REPOSITORY                      TAG       IMAGE ID       CREATED             SIZE
+dailycodebuffer/alpinetree      latest    c0f584371709   About an hour ago   5.57MB
+docker/getting-started          latest    cb90f98fd791   5 weeks ago         28.8MB
+alpine                          latest    0ac33e5f5afa   6 weeks ago         5.57MB
+hello-world                     latest    feb5d9fea6a5   7 months ago        13.3kB
+dailycodebuffer/dockerpublish   0.0.3     d45040fec2f8   22 months ago       644MB
+PS C:\Users\ankit> docker import  alpinetree.tar dailycodebuffer/alpineimport:0.0.3
+sha256:4acb77fc5b1950aabe7bd4937b4e872285de55c5ed4c0a6cbf99a2916ab6e26f
+PS C:\Users\ankit> docker images
+REPOSITORY                      TAG       IMAGE ID       CREATED             SIZE
+dailycodebuffer/alpineimport    0.0.3     4acb77fc5b19   14 seconds ago      5.57MB
+dailycodebuffer/alpinetree      latest    c0f584371709   About an hour ago   5.57MB
+docker/getting-started          latest    cb90f98fd791   5 weeks ago         28.8MB
+alpine                          latest    0ac33e5f5afa   6 weeks ago         5.57MB
+hello-world                     latest    feb5d9fea6a5   7 months ago        13.3kB
+dailycodebuffer/dockerpublish   0.0.3     d45040fec2f8   22 months ago       644MB
+PS C:\Users\ankit>
